@@ -2,19 +2,26 @@ Wykluł się pomysł na czarną skrzynkę, która pozwoli studentom WEMiF ładow
 
 Założenia funkcjonalne
 
-- Wyświetlacz obecnie oferuje 8x8x8 voxeli w kolorze zielonym. Można ładować krótkie animacje (kilkadziesiąt klatek, a wraczej kostek) 
-  o regulowanych interwałach czasowych. Techniczna realizacja wyświetlani animacji i ich ładowanie do RAM wyświetlacza jest już wykonane.
-- Ze sterownikiem wyświetlacza obrazu można się dogadać przez UART, korzystając z prymitywnego protokołu 
-  (m.in. 1-bajtowe kody rozkazów, dane przesyłane w formie ciągów cyfr szesnastkowych, śladowe odpowiedzi zwrotne ze strony sterownika wyświetlacza).
-  Generalnie jest to protokół tekstowy, więc zaprogramowanie krótkiej animacji to po prostu wysłanie pliku tekstowego UARTem.
+- Wyświetlacz obecnie oferuje 8x8x8 voxeli w kolorze zielonym. Można ładować krótkie animacje (kilkadziesiąt klatek, 
+  a raczej kostek zbudowanych z voxeli) o regulowanych interwałach czasowych. Techniczna realizacja wyświetlania animacji 
+  i ich ładowanie do RAM wyświetlacza jest już zrobione.
+- Ze sterownikiem wyświetlacza obrazu można się dogadać przez UART, korzystając z dość prymitywnego protokołu 
+  (m.in. 1-bajtowe kody rozkazów, dane przesyłane w formie ciągów cyfr szesnastkowych, śladowe odpowiedzi 
+  zwrotne ze strony sterownika wyświetlacza). Generalnie jest to protokół tekstowy, więc zaprogramowanie 
+  krótkiej animacji to po prostu wysłanie pliku tekstowego UARTem.
 - Załadowanie grafiki wymaga zarejestrowania konta potwierdzonego mailem w domenie *.pwr.edu.pl.
-  Chodzi o ograniczenie natłoku sieciowego oraz pewną odpowiedzialność za wyświetlane na urządzeniu treści.
-- Dostęp do wyświetlacza jest kolejkowany, tzn. gdyby jednocześnie podłączyło się wielu użytkowników, to animacje zaczekają 
+  Chodzi o ograniczenie natłoku sieciowego oraz pewną odpowiedzialność za wyświetlane na urządzeniu treści. Między 23:00 a 6:00 
+  być może złagodzimy nieco cenzurę. Cenne i niezwykle pouczające doświadczenia mam z warsztatów, które prowadziłem dla dzieciaków 
+  z 5-6 klasy podstawówki, które to słodkie dzieciątka wykazały się przerażającą kreatywnością artystyczną.
+- Dostęp do wyświetlacza ma być kolejkowany, tzn. gdyby jednocześnie podłączyło się wielu użytkowników, to animacje zaczekają 
   w kolejce i nie będą sobie przeszkadzać.
-- Grafikę do wyświetlenia można będzie przygotować w domu, przesłać na lokalny serwer obsługujący urządzenie 
-  i w dowolnej chwili odtworzyć (np. aby zobaczyć własne dzieło na żywo albo pochwalić się komuś)
-- Dodatkowym wyposażeniem serwera jest kamera, która na żywo udostępnia obraz lub ew. robi statyczne zdjęcia na żądanie.
-- Edytor off-site do grafiki będzie dostępny jako strona WWW oraz osobne aplikacje dla Androida, WindowsPhone, ...
-- Osobno może być dostępna aplikacja do podglądu plików w 3D OpenGL na komputerach stacjonarnych lub smartfonach. 
-  Oczywiście można w ten sposób oglądać pliki innych użytkowników, o ile udostępnią je wskazanym osobom lub udostępnią publicznie.
-- Dostęp z Internetu musi być odpowiednio zabezpieczony - nie wchodzi w grę otwarty kanał komunikacyjny lub PHP z rażącymi dziurami typu SQL injection.
+- Grafikę do wyświetlenia można będzie przygotować w domu, przesłać na dedykowany serwer obsługujący urządzenie 
+  i w dowolnej chwili odtworzyć (np. po to, aby zobaczyć własne dzieło na żywo albo pochwalić się komuś).
+- Dodatkowym wyposażeniem serwera jest kamera, która na żywo udostępnia podgląd lub ew. robi statyczne zdjęcia na żądanie.
+- Edytor off-site do grafiki będzie dostępny jako strona WWW oraz dedykowane aplikacje dla Androida, WindowsPhone, ...
+- Osobno może być dostępna aplikacja do podglądu plików 3D w OpenGL na komputerach stacjonarnych lub smartfonach. 
+  Będzie można w ten sposób oglądać także pliki innych użytkowników, o ile udostępnią je wskazanym osobom lub publicznie.
+- Dostęp z Internetu musi być odpowiednio zabezpieczony - nie wchodzi w grę otwarty kanał komunikacyjny lub PHP 
+  z rażącymi dziurami typu SQL injection.
+- Rolę serwera LEDcube pełni Linuks uruchomiony na iMX53QSB lub Raspberry Pi 3, który z jednej strony dogaduje się lokalnie
+  ze sterownikiem wyświetlacza po UART, a z drugiej ma stały dostęp do Internetu i publiczne IP (lub zmapowane porty).

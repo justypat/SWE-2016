@@ -1,4 +1,5 @@
-Wykluł się pomysł na czarną skrzynkę, która pozwoli studentom WEMiF ładować własne obrazki lub animacje z komputerów, tabletów i smartfonów.
+Wykluł się pomysł na czarną skrzynkę, która pozwoli studentom WEMiF ładować własne obrazki 
+lub animacje z komputerów, tabletów i smartfonów na LEDcuba, który kurzy się w 31A.
 
 Założenia funkcjonalne
 

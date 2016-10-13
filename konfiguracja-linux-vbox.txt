@@ -1,9 +1,13 @@
-settings->network: bridged
+Zmień konfigurację sieci w ustawieniach VBoxa:
+settings->network: bridged (mostkowana karta sieciowa)
+ew.
+settings->network: NAT
 
 dmesg | grep eth
-sudo su -
-mcedit /etc/network/interfaces
-reboot
+//sprawdzasz obowiązujący identyfikator interfejsu sieciowego, np. eth1, eth2
+sudo mcedit /etc/network/interfaces
+//ew. zamiast reboot wystarczy ifup/ifdown
+sudo reboot
 
 ping 8.8.8.8
 
@@ -15,4 +19,3 @@ git clone https://github.com/wemif/SWE-2016.git
 cd ./SWE-2016/mutex-linux
 chmod a+x compile.sh
 ./compile.sh
-

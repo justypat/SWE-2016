@@ -1,6 +1,9 @@
 Wykluł się pomysł na czarną skrzynkę, która pozwoli studentom WEMiF ładować własne obrazki 
 lub animacje z komputerów, tabletów i smartfonów na LEDcuba, który kurzy się w 31A.
 
+
+Przykładowa aplikacja (zrzut ekranu) umożliwiająca przygotowanie i podgląd grafiki 3D dla LedCube jest w pliku LedCubeDesignerCSharp-scr.png
+
 Założenia funkcjonalne
 
 - Wyświetlacz obecnie oferuje 8x8x8 voxeli w kolorze zielonym. Można ładować krótkie animacje (kilkadziesiąt klatek, 

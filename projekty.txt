@@ -1,4 +1,4 @@
-Imię i nazwisko
+Cezary Wawrzyniak
 Temat projektu [link do repozytorium github]
 Krótki opis projektu
 

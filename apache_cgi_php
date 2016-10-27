@@ -13,13 +13,16 @@ sudo apache2ctl restart
 =2=================================================
 sudo mcedit /var/www/cgi-bin/test.cpp
 #include <cstdio>
+#include <cstdlib>
 
 int main()
 {
+    char *query = getenv("QUERY_STRING");
     printf("Content-type: text/html\r\n\r\n");
-    printf("Hello, world!\r\n");
+    printf("query = [<b>%s</b>]<br />", query);
     return 0;
 }
+
 
 g++ test.cpp -o test.cgi
 

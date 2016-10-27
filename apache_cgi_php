@@ -1,0 +1,45 @@
+=0=================================================
+sudo apt-get install apache2 php5
+
+
+=1=================================================
+sudo mcedit /etc/apache2/sites-enabled/000-default
+
+...zmiana: ScriptAlias /cgi-bin/ /var/www/cgi-bin/
+
+sudo apache2ctl restart
+
+
+=2=================================================
+sudo mcedit /var/www/cgi-bin/test.cpp
+#include <cstdio>
+
+int main()
+{
+    printf("Content-type: text/html\r\n\r\n");
+    printf("Hello, world!\r\n");
+    return 0;
+}
+
+g++ test.cpp -o test.cgi
+
+=3=================================================
+sudo mcedit /var/www/index.php
+<html>
+<body>
+<h1>Systemy Wbudowane w Elektronice</h1>
+
+<form action="/cgi-bin/test.cgi" method="get">
+<input type="text" name="a">
+<input type="submit" value="jazda!">
+</form>
+
+</body>
+</html>
+
+GOTOWE!!!
+
+
+
+
+

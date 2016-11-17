@@ -8,6 +8,14 @@
 - odpal terminal w linuksie (CLI)
 - ping 8.8.8.8 - działa?
 - przekonfiguruj listę repozytoriów apt-get tak, aby wspierała archiwalną dystrybucję (lucid)
+## EOL upgrade sources.list
+# Required
+deb http://old-releases.ubuntu.com/ubuntu/ lucid main restricted universe multiverse
+deb http://old-releases.ubuntu.com/ubuntu/ lucid-updates main restricted universe multiverse
+deb http://old-releases.ubuntu.com/ubuntu/ lucid-security main restricted universe multiverse
+# Optional
+deb http://old-releases.ubuntu.com/ubuntu/ lucid-backports main restricted universe multiverse
+
 - sudo apt-get update
 - pobierz pakiety gcc, g++, apache2, php5, git
 - wygooglaj, jak można automatycznie synchronizować czas z NTP po włączeniu zasilania

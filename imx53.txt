@@ -1,13 +1,17 @@
-- wypal kartę i umieść w slocie microSD
-- podłącz rs232 i odpal terminal.exe COM1, 115200,8,N,1
-- włącz zasilanie
+- pobierz gotowy obraz systemu Ubuntu dla iMX53QSB (lub poszukaj go na stanowiskach w lab21)
+- wypal kartę na PC (czytnik usb!)
+- umieść kartę w slocie microSD zestawu iMX53QSB
+- podłącz rs232 i odpal terminal.exe COM1, 115200,8,N,1 - nie wyłam delikatnego gniazda RS232 w zestawie!
+- włącz zasilanie zestawu (przycisk obok slotu microSD)
 - zaloguj jako lucid/lucid
 - ustaw datę ręcznie (sudo!)
-- podłącz net, vga, mysz, klawiaturę
+- zmień domyślne hasło użytkownika na swoje własne
+- podłącz net, vga, mysz, klawiaturę - nie wyłam delikatnego gniazda VGA w zestawie!
 - przełącz się na monitor VGA
 - odpal terminal w linuksie (CLI)
 - ping 8.8.8.8 - działa?
-- przekonfiguruj listę repozytoriów apt-get tak, aby wspierała archiwalną dystrybucję (lucid)
+
+- przekonfiguruj listę repozytoriów apt-get tak, aby wspierała archiwalną dystrybucję ubuntu-lucid:
 ## EOL upgrade sources.list
 # Required
 deb http://old-releases.ubuntu.com/ubuntu/ lucid main restricted universe multiverse
@@ -16,8 +20,9 @@ deb http://old-releases.ubuntu.com/ubuntu/ lucid-security main restricted univer
 # Optional
 deb http://old-releases.ubuntu.com/ubuntu/ lucid-backports main restricted universe multiverse
 
-- sudo apt-get update
-- pobierz pakiety gcc, g++, apache2, php5, git
-- wygooglaj, jak można automatycznie synchronizować czas z NTP po włączeniu zasilania
-- uzyskaj od prowadzącego mapowanie portów 22, 80, 443.
-- przełącz się na windows i sprawdź http:// oraz ssh://
+- sudo apt-get update (musi działać połączenie z internetem)
+- pobierz pakiety gcc, g++, apache2, php5, git, ...
+- wygooglaj, jak można automatycznie synchronizować czas z NTP po włączeniu zasilania i skonfiguruj tę usługę
+- dodaj swój MAC do statycznego przydziału DHCP
+- wykonaj mapowanie portów 22, 80 (i dowolnego innego TCP/UDP, którego będziesz używać do realizacji kolejnych zadań)
+- sprawdź, czy działa http://156.17.13.54:zmapowanyportHTTP oraz ssh://156.17.13.54:zmapowanyportSSH (z innego komputera, ze smartfona, ...)

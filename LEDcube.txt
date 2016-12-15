@@ -1,6 +1,17 @@
 Wykluł się pomysł na czarną skrzynkę, która pozwoli studentom WEMiF ładować własne obrazki 
 lub animacje z komputerów, tabletów i smartfonów na LEDcuba, który kurzy się w 31A.
 
+!xx xx xx xx.... 512 bitów = 8x8x8 stanu LEDów, tylko małe cyfry hex
+ABCDEF - globalna zmiana prędkości animacji
+> - włącza animację
+~ - resetowanie pamięci 
+
+~
+! ffffffffffffffff 0000000000000000 0000000000000000 0000000000000000 0000000000000000 0000000000000000 0000000000000000 0000000000000000
+! ffffc3c3c3c3ffff 00003c3c3c3c0000 0000000000000000 0000000000000000 0000000000000000 0000000000000000 0000000000000000 0000000000000000
+! ffffc3c3c3c3ffff 0000000000000000 00003c3c3c3c0000 0000000000000000 0000000000000000 0000000000000000 0000000000000000 0000000000000000
+>
+
 
 Przykładowa aplikacja (zrzut ekranu) umożliwiająca przygotowanie i podgląd grafiki 3D dla LedCube jest w pliku LedCubeDesignerCSharp-scr.png
 

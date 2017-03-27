@@ -1,4 +1,6 @@
 - pobierz gotowy obraz systemu Ubuntu dla iMX53QSB (lub poszukaj go na stanowiskach w lab21)
+https://www.nxp.com/webapp/sps/download/license.jsp?colCode=MX53_QSB_UBUNTU_SD_DEMO_IMAGE&appType=file1&location=null&DOWNLOAD_ID=null
+
 - wypal kartę na PC (czytnik usb!)
 - umieść kartę w slocie microSD zestawu iMX53QSB
 - podłącz rs232 i odpal terminal.exe COM1, 115200,8,N,1 - nie wyłam delikatnego gniazda RS232 w zestawie!

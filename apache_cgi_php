@@ -1,5 +1,7 @@
 =0=================================================
 sudo apt-get install apache2 php5
+//uwaga. powyższa komenda może nie zadziałać. spróbuj tego:
+sudo apt-get install php libapache2-mod-php
 
 
 =1=================================================

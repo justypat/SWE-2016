@@ -17,5 +17,7 @@ sudo apt-get install gcc
 
 git clone https://github.com/wemif/SWE-2016.git
 cd ./SWE-2016/mutex-linux
+mv mutex.c mutex.c.orig
+tr -d '\015' < mutex.c.orig > mutex.c
 chmod a+x compile.sh
 ./compile.sh

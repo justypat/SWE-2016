@@ -1,0 +1,41 @@
+[https://releases.linaro.org/archive/12.04/android/leb-imx53/]
+
+Install instructions
+
+There are two methods to install linaro builds:
+- using pre-built image
+- creating your own image with linaro image tools
+
+Using pre-built image
+
+ # Insert SD card and note the assigned '/dev/sdX' or '/dev/mmcblk0'
+  $ dmesg
+
+  $ SDCARD=/dev/sdX # sdcard found from dmesg above
+  $ URL=http://releases.linaro.org/12.04/android/images/imx53-ics-gcc47-freescalelt-stable-open/imx53-ics-gcc47-freescalelt-stable-open.img.gz
+  $ curl $URL | gunzip -c | sudo dd bs=64k of=$SDCARD
+Note: Windows users may use the Image Writer for Windows 
+
+Building a Custom Image
+
+ # Get artifacts
+  $ wget http://releases.linaro.org/12.04/android/images/imx53-ics-gcc47-freescalelt-stable-open/boot.tar.bz2 http://releases.linaro.org/12.04/android/images/imx53-ics-gcc47-freescalelt-stable-open/system.tar.bz2 http://releases.linaro.org/12.04/android/images/imx53-ics-gcc47-freescalelt-stable-open/userdata.tar.bz2
+
+  # Get linaro image tools
+  # method 1: using binary package for Ubuntu (PPA)
+  $ sudo add-apt-repository ppa:linaro-maintainers/tools
+  $ sudo apt-get update
+  $ sudo apt-get install linaro-image-tools
+  # method 2: using source code
+  $ wget http://releases.linaro.org/12.04/components/platform/linaro-image-tools/linaro-image-tools-2012.04.tar.gz
+
+  # Insert SD card and note the assigned '/dev/sdX' or '/dev/mmcblk0'
+  $ dmesg
+
+  # Create media
+  $ sudo linaro-android-media-create --mmc /dev/sdX --dev mx53loco --system system.tar.bz2 --boot boot.tar.bz2 --userdata userdata.tar.bz2
+Links
+
+For more information on how to use this builds please see the Linaro wiki at: 
+
+        http://wiki.linaro.org/Platform/Android/ImageInstallation 
